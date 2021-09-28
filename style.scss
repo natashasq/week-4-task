@@ -15,6 +15,7 @@ $light-blue-grey-color: #c2cbe5;
 body,
 html {
   height: 100%;
+  overflow: auto;
 }
 
 @mixin tabletScreen {
@@ -80,11 +81,13 @@ html {
     top: 0;
     left: 0;
     z-index: -1;
+    display: block;
     @include tabletScreen {
       display: none;
     }
   }
 }
+
 .header {
   width: 100%;
   display: flex;
@@ -104,11 +107,6 @@ html {
       top: 102px;
     }
   }
-}
-
-mark.turquoise {
-  color: $turquoise-color;
-  background-color: transparent;
 }
 
 .page {
@@ -143,7 +141,7 @@ mark.turquoise {
       margin-bottom: 31px;
     }
     @include desktopScreen {
-      vfont-size: 52px;
+      font-size: 52px;
       line-height: 62px;
       margin-bottom: 24px;
     }
@@ -213,6 +211,16 @@ mark.turquoise {
       margin: 0;
       width: 427px;
     }
+
+    ::placeholder {
+      @include body;
+      font-weight: 400;
+      color: white;
+      opacity: 0.5;
+      @include tabletScreen {
+        text-align: left;
+      }
+    }
   }
   &__form-btn {
     padding: 9px 32px;
@@ -240,6 +248,7 @@ mark.turquoise {
     margin-top: 8px;
   }
 }
+
 .footer {
   display: none;
   @include tabletScreen {
@@ -254,24 +263,19 @@ mark.turquoise {
   }
 }
 
-::placeholder {
-  @include body;
-  font-weight: 400;
-  color: white;
-  opacity: 0.5;
-  @include tabletScreen {
-    text-align: left;
-  }
+.-turquoise {
+  color: $turquoise-color;
+  background-color: transparent;
 }
 
-.google-podcast-height {
+.-google-podcast-height {
   max-height: 11px;
   @include tabletScreen {
     max-height: 18px;
   }
 }
 
-.pocket-casts-height {
+.-pocket-casts-height {
   max-height: 15px;
   @include tabletScreen {
     max-height: 26px;

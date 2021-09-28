@@ -9,6 +9,7 @@
 body,
 html {
   height: 100%;
+  overflow: auto;
 }
 
 .wrapper {
@@ -52,6 +53,7 @@ html {
   top: 0;
   left: 0;
   z-index: -1;
+  display: block;
 }
 @media screen and (min-width: 600px) {
   .wrapper::before {
@@ -82,11 +84,6 @@ html {
     position: absolute;
     top: 102px;
   }
-}
-
-mark.turquoise {
-  color: #54e6af;
-  background-color: transparent;
 }
 
 .page {
@@ -134,7 +131,7 @@ mark.turquoise {
 }
 @media screen and (min-width: 1100px) {
   .page__title {
-    vfont-size: 52px;
+    font-size: 52px;
     line-height: 62px;
     margin-bottom: 24px;
   }
@@ -225,6 +222,21 @@ mark.turquoise {
     width: 427px;
   }
 }
+.page__form-input ::placeholder {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 25px;
+  color: #c2cbe5;
+  text-align: center;
+  font-weight: 400;
+  color: white;
+  opacity: 0.5;
+}
+@media screen and (min-width: 600px) {
+  .page__form-input ::placeholder {
+    text-align: left;
+  }
+}
 .page__form-btn {
   padding: 9px 32px;
   border-radius: 28px;
@@ -273,36 +285,25 @@ mark.turquoise {
   }
 }
 
-::placeholder {
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 25px;
-  color: #c2cbe5;
-  text-align: center;
-  font-weight: 400;
-  color: white;
-  opacity: 0.5;
-}
-@media screen and (min-width: 600px) {
-  ::placeholder {
-    text-align: left;
-  }
+.-turquoise {
+  color: #54e6af;
+  background-color: transparent;
 }
 
-.google-podcast-height {
+.-google-podcast-height {
   max-height: 11px;
 }
 @media screen and (min-width: 600px) {
-  .google-podcast-height {
+  .-google-podcast-height {
     max-height: 18px;
   }
 }
 
-.pocket-casts-height {
+.-pocket-casts-height {
   max-height: 15px;
 }
 @media screen and (min-width: 600px) {
-  .pocket-casts-height {
+  .-pocket-casts-height {
     max-height: 26px;
   }
 }

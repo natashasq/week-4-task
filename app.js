@@ -2,12 +2,15 @@ const button = document.querySelector(".page__form-btn");
 const input = document.querySelector(".page__form-input");
 const form = document.querySelector(".page__form");
 
-button.addEventListener("click", e => {
-  let message = document.querySelector(".page__form-message");
-  let validRegex =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+const emailEmptyMessage = "Oops! Please add your email";
+const emailInvalidMessage = "Oops! Please check your email";
 
-  let p = document.createElement("p");
+const validRegex =
+  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+button.addEventListener("click", e => {
+  const message = document.querySelector(".page__form-message");
+  const validationMessage = document.createElement("p");
 
   if (message) {
     message.remove();
@@ -15,18 +18,24 @@ button.addEventListener("click", e => {
 
   if (input.value === "") {
     e.preventDefault();
-    let text = document.createTextNode("Oops! Please add your email");
-    p.classList.add("page__form-message");
-    p.appendChild(text);
-    form.append(p);
+
+    const text = document.createTextNode(emailEmptyMessage);
+
+    validationMessage.classList.add("page__form-message");
+    validationMessage.appendChild(text);
+
+    form.append(validationMessage);
     return;
   }
 
   if (!input.value.match(validRegex)) {
     e.preventDefault();
-    let text = document.createTextNode("Ooops! Please, check your email");
-    p.classList.add("page__form-message");
-    p.appendChild(text);
-    form.append(p);
+
+    const text = document.createTextNode(emailInvalidMessage);
+
+    validationMessage.classList.add("page__form-message");
+    validationMessage.appendChild(text);
+
+    return form.append(validationMessage);
   }
 });
