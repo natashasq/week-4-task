@@ -15,7 +15,7 @@ button.addEventListener("click", e => {
 
   if (input.value === "") {
     e.preventDefault();
-    let text = document.createTextNode("Please, enter your email");
+    let text = document.createTextNode("Oops! Please add your email");
     p.classList.add("page__form-message");
     p.appendChild(text);
     form.append(p);
