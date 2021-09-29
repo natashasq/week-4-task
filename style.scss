@@ -8,14 +8,13 @@ $light-blue-grey-color: #c2cbe5;
   font-family: "Chivo", sans-serif;
   margin: 0;
   padding: 0;
-  overflow: auto;
   box-sizing: border-box;
+  overflow: auto;
 }
 
 body,
 html {
   height: 100%;
-  overflow: auto;
 }
 
 @mixin tabletScreen {
@@ -50,7 +49,8 @@ html {
 .wrapper {
   width: 100%;
   height: 100%;
-  background-image: url(assets/mobile/image-host.jpg);
+  background: url(assets/mobile/image-host.jpg) rgba(18, 23, 37, 0.9);
+  background-blend-mode: multiply;
   background-repeat: no-repeat;
   z-index: 0;
   position: relative;
@@ -61,7 +61,9 @@ html {
   }
   @include tabletScreen {
     padding: 50px 94px 0 39px;
-    background-image: url(assets/tablet/image-host.jpg);
+    background: url(assets/tablet/image-host.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: normal;
     background-size: auto;
     background-position-x: right;
     background-color: $dark-blue-grey-color;
@@ -71,20 +73,6 @@ html {
     background-color: $dark-blue-grey-color;
     background-image: none;
     position: relative;
-  }
-  &::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(18, 23, 37, 0.9);
-    top: 0;
-    left: 0;
-    z-index: -1;
-    display: block;
-    @include tabletScreen {
-      display: none;
-    }
   }
 }
 
@@ -190,8 +178,12 @@ html {
   &__form {
     display: flex;
     flex-direction: column;
+    position: relative;
+    min-height: 327px;
+    overflow: visible;
     @include tabletScreen {
       margin-bottom: 60px;
+      min-height: auto;
     }
   }
   &__form-input {
@@ -203,11 +195,11 @@ html {
     outline: none;
     @include body;
     font-size: 14px;
+    line-height: 28px;
     color: white;
-    text-align: center;
     font-weight: 400;
+    text-align: left;
     @include tabletScreen {
-      text-align: left;
       padding: 15px 32px;
       margin: 0;
       width: 427px;
@@ -230,6 +222,7 @@ html {
     background-color: $turquoise-color;
     @include body;
     font-weight: 700;
+    line-height: 28px;
     color: $dark-blue-grey-color;
     &:hover {
       background-color: #b3ffe2;
@@ -237,16 +230,21 @@ html {
     }
     @include tabletScreen {
       width: fit-content;
-      margin: -51px 0 8px 251px;
+      margin: -54px 0 8px 251px;
       padding: 11px 27px;
     }
   }
   &__form-message {
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 700;
     color: red;
-    margin-left: 32px;
-    margin-top: 8px;
+    position: absolute;
+    top: 113px;
+    left: 20px;
+    @include tabletScreen {
+      top: 61px;
+      left: 30px;
+    }
   }
 }
 
@@ -254,11 +252,13 @@ html {
   display: none;
   @include tabletScreen {
     display: block;
+    position: relative;
+    overflow: visible;
   }
   &__img {
     @include desktopScreen {
       position: absolute;
-      bottom: 76px;
+      bottom: -35px;
       right: 0;
     }
   }
@@ -281,9 +281,4 @@ html {
   @include tabletScreen {
     max-height: 26px;
   }
-}
-
-//test za git
-.test {
-  font-size: 10px;
 }
