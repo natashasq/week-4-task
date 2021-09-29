@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>pod</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <img class="header__logo" alt="logo" src="/assets/desktop/logo.svg" />
+      </header>
+      <main class="page">
+        <div class="page__content">
+          <h1 class="page__title">
+            <mark class="page__title -turquoise">Publish your podcasts</mark>
+            everywhere.
+          </h1>
+          <p class="page__text">
+            Upload your audio to Pod with a single click. We’ll then distribute
+            your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket
+            Casts and more!
+          </p>
+          <div class="page__bottom-wrapper">
+            <div class="page__share-wrapper">
+              <img
+                class="page__share-icon"
+                alt="Spotify icon"
+                src="/assets/desktop/spotify.svg"
+              />
+              <img
+                class="page__share-icon"
+                alt="Apple podcast icon"
+                src="/assets/desktop/apple-podcast.svg"
+              />
+              <img
+                class="page__share-icon -google-podcast-height"
+                alt="Google potcast icon"
+                src="/assets/desktop/google-podcasts.svg"
+              />
+              <img
+                class="page__share-icon -pocket-casts-height"
+                alt="Pocket Casts"
+                src="/assets/desktop/pocket-casts.svg"
+              />
+            </div>
+            <form class="page__form">
+              <input
+                class="page__form-input"
+                type="text"
+                placeholder="Email address"
+                name="email"
+              />
+              <button class="page__form-btn" type="submit">
+                Request Access
+              </button>
+            </form>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <img
+          class="footer__img"
+          alt="dots"
+          src="assets/desktop/bg-pattern-dots.svg"
+        />
+      </footer>
+    </div>
+  </body>
+  <script type="text/javascript" src="app.js"></script>
+</html>

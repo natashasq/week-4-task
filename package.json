@@ -1,0 +1,24 @@
+{
+  "name": "week-4-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass:watch": "sass --watch style.scss style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natashasq/week-4-task.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/natashasq/week-4-task/issues"
+  },
+  "homepage": "https://github.com/natashasq/week-4-task#readme",
+  "dependencies": {
+    "node-sass": "^6.0.1",
+    "sass": "^1.41.1"
+  }
+}
