@@ -204,9 +204,10 @@ html {
     @include body;
     font-size: 14px;
     color: white;
-    text-align: left;
+    text-align: center;
     font-weight: 400;
     @include tabletScreen {
+      text-align: left;
       padding: 15px 32px;
       margin: 0;
       width: 427px;

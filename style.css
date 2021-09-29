@@ -212,11 +212,12 @@ html {
   text-align: center;
   font-size: 14px;
   color: white;
-  text-align: left;
+  text-align: center;
   font-weight: 400;
 }
 @media screen and (min-width: 600px) {
   .page__form-input {
+    text-align: left;
     padding: 15px 32px;
     margin: 0;
     width: 427px;
